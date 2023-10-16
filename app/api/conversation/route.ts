@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
-import { Configuration, OpenAIApi } from "openai";
+import { Configuration, OpenAIApi, ChatCompletionFunctions, ChatCompletionRequestMessage } from "openai";
 import { checkApiLimit, incrementApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
@@ -36,6 +36,11 @@ export async function POST(
     if (!freeTrial && !isPro) {
       return new NextResponse("Free trial has expired. Please upgrade to pro.", { status: 403 });
     }
+
+    // const instructionMessage: ChatCompletionRequestMessage = {
+    //     role: "system",
+    //     content: "You are a code generator. You write it as short as possible. You only write the code, no explanation, no comments. You must answer only in markdown code snippets in under 50 tokens."
+    //   }
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",

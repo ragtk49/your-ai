@@ -13,6 +13,7 @@ const MobileSidebar = ({apiLimitCount = 0,
     isPro: boolean;
   }) => {
     const [isMounted, setIsMounted] = useState(false);
+    
     useEffect(() => {
         setIsMounted(true);
     }, []);
