@@ -5,6 +5,7 @@ import { checkApiLimit, incrementApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
 export const runtime = 'edge';
+export const maxDuration = 300;
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
