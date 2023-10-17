@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { checkApiLimit, incrementApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 export const maxDuration = 300;
 
 const configuration = new Configuration({
