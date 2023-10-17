@@ -5,6 +5,8 @@ import { Configuration, OpenAIApi } from "openai";
 import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
+export const maxDuration = 300;
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
