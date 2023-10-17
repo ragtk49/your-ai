@@ -1,0 +1,11 @@
+{
+    "functions": {
+      "api/conversation": {
+        "maxDuration": 300
+      },
+      "api/code": {
+        "maxDuration": 300
+      }
+    }
+  }
+  
